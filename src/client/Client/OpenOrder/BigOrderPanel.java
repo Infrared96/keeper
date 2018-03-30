@@ -24,7 +24,7 @@ public class BigOrderPanel extends JPanel {
     private void init() {
         this.add(new ButtonPanel(this.facade,this), BorderLayout.SOUTH);
         ArrayList<Dish> dishes = DishesList.parseDishes(facade.getMessageManager().getDishes(""));
-        DishesTable dt = new DishesTable(this.facade, dishes);
+        DishesTable dt = new DishesTable(this.facade, dishes, this.or);
 
         JScrollPane dishScroll = new JScrollPane(dt);
         add(dishScroll, BorderLayout.CENTER);

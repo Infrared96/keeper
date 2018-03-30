@@ -31,14 +31,15 @@ public class NewOldOrder extends JPanel {
         this.or = or;
         setLayout(new GridLayout(2,1));
 
-        not = new NewOrderTable(new TableModelNewOrder(this.arrayOrders ,this.facade));
-
+        TableModelNewOrder tableNew = new TableModelNewOrder(this.arrayOrders, this.facade);
+        facade.setTableModelNewOrder(tableNew);
+        not = new NewOrderTable(tableNew);
+        facade.setNewOrderTable(not);
         JScrollPane scrollPane = new JScrollPane(not);
         add(scrollPane);
 
         ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
-        oot = new NewOrderTable(new TableModelNewOrder(oldOrders,this.facade));
-
+        oot = new NewOrderTable(new TableModelNewOrder(oldOrders, this.facade));
         JScrollPane oldScrollPane = new JScrollPane(oot);
         add(oldScrollPane);
 

@@ -17,12 +17,14 @@ public class DishesTable extends JTable {
     ArrayList<Dish> dishes;
     //ArrayList<NewOrder> arrayNewOrders;
     //public DishesTable(Facade facade, Order or, ArrayList<Dish> dishes, ArrayList<NewOrder> arrayNewOrders) {
-    public DishesTable(Facade facade,ArrayList<Dish> dishes) {
+    public DishesTable(Facade facade,ArrayList<Dish> dishes, Order or) {
         this.facade = facade;
         this.dishes = dishes;
        // this.arrayNewOrders = arrayNewOrders;
 
-        this.setModel(new TableModelDishes(this.dishes));
+        TableModelDishes table = new TableModelDishes(this.dishes);
+        this.setModel(table);
+        this.facade.setTableModelDishes(table);
         this.getTableHeader().setPreferredSize(new Dimension(0, 24));
         this.rowHeight = 24;
 
@@ -40,33 +42,34 @@ public class DishesTable extends JTable {
         });
 
         //this.addMouseListener(new addNewOrder( this, dishes, arrayNewOrders, or));
+        this.addMouseListener(new addNewOrder( this, dishes, or));
     }
 
 
 
-//    private class addNewOrder extends MouseAdapter {
-//        ArrayList<Dish> dishes;
-//        JTable table;
-//        ArrayList<NewOrder> arrayNewOrders;
-//        Order or;
-//
-//        public addNewOrder(JTable table, ArrayList<Dish> dishes, ArrayList<NewOrder> arrayNewOrders, Order or) {
-//            this.dishes = dishes;
-//            this.table = table;
-//            this.arrayNewOrders = arrayNewOrders;
-//            this.or = or;
-//        }
-//
-//        @Override
-//        public void mouseClicked(MouseEvent e) {
-//            System.out.println( "click = " + e.getClickCount() + "mouse: " +  e.getModifiersEx() );
-//
-//            if(e.getClickCount() == 2 && e.getModifiersEx() == 0) {
-//                int row = table.rowAtPoint(e.getPoint());
-//                Dish dish = this.dishes.get(row);
-//                arrayNewOrders.add(new NewOrder(0,dish.getId(), or.getId(), 1.0, false));
-//            }
-//           // this.no.add()
-//        }
-//    }
+    private class addNewOrder extends MouseAdapter {
+        ArrayList<Dish> dishes;
+        JTable table;
+        Order or;
+
+        public addNewOrder(JTable table, ArrayList<Dish> dishes, Order or) {
+            this.dishes = dishes;
+            this.table = table;
+            this.or = or;
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            System.out.println( "click = " + e.getClickCount() + "mouse: " +  e.getModifiersEx() );
+
+            if(e.getClickCount() == 2 && e.getModifiersEx() == 0) {
+                int row = table.rowAtPoint(e.getPoint());
+                Dish dish = this.dishes.get(row);
+                facade.addActualOrder(new NewOrder(dish, this.or, 1));
+                facade.setTableModelNewOrder(new TableModelNewOrder(facade.getActualOrder(), facade));
+                facade.setModel_NewOrderTable(facade.getTableModelNewOrder());
+            }
+           // this.no.add()
+        }
+    }
 }
