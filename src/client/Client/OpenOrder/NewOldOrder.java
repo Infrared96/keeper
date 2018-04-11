@@ -10,8 +10,6 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class NewOldOrder extends JPanel {
-    //private TableModelNewOrder tmno;
-    //private TableModelOldOrder tmoo;
     private NewOrderTable not;
     private NewOrderTable oot;
     private Facade facade;
@@ -32,11 +30,23 @@ public class NewOldOrder extends JPanel {
         setLayout(new GridLayout(2,1));
 
         TableModelNewOrder tableNew = new TableModelNewOrder(this.arrayOrders, this.facade);
-        facade.setTableModelNewOrder(tableNew);
         not = new NewOrderTable(tableNew);
+        facade.setTableModelNewOrder(tableNew);
         facade.setNewOrderTable(not);
         JScrollPane scrollPane = new JScrollPane(not);
-        add(scrollPane);
+
+        JPanel newPanel = new JPanel();
+        newPanel.setLayout(new BorderLayout());
+        newPanel.add(scrollPane, BorderLayout.CENTER);
+
+        JPanel buttons = new JPanel(new GridLayout(1,2,10, 10));
+        JButton add = new JButton("Добавить");
+        JButton del = new JButton("Удалить");
+
+        buttons.add(add);
+        buttons.add(del);
+        newPanel.add(buttons, BorderLayout.SOUTH);
+        add(newPanel);
 
         ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
         oot = new NewOrderTable(new TableModelNewOrder(oldOrders, this.facade));
