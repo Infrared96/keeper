@@ -39,7 +39,7 @@ public class TableModelDishes extends AbstractTableModel {
 
     public String getColumnName(int column)
     {
-        String[] name = {"Название","Вес","Цена(грн)"};
+        String[] name = {"Название","Вес(г/мл)","Цена(грн)"};
         return name[column];
     }
 }

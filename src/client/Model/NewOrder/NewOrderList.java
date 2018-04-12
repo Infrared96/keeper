@@ -27,6 +27,18 @@ public class NewOrderList {
         }
         return newOrders;
     }
+
+    public static String parseString(ArrayList<NewOrder> orders) {
+        JSONArray list = new JSONArray();
+        for(int i = 0 ; i < orders.size(); i++) {
+            JSONObject obj = new JSONObject();
+            obj.put("dish_id", orders.get(i).getDish_id());
+            obj.put("order_id", orders.get(i).getOrder_id());
+            obj.put("amount", orders.get(i).getAmount());
+            list.add(obj);
+        }
+        return list.toJSONString();
+    }
 //    public static ArrayList<Order> getOrders() {
 //        if(orders == null) {
 //            orders = new ArrayList<>();
