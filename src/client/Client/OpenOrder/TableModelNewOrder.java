@@ -44,7 +44,8 @@ public class TableModelNewOrder extends AbstractTableModel {
             case 1: ret = dish.getName(); break;
             case 2: ret = dish.getAmount()+"";break;
             case 3: ret = or.getAmount()+""; break;
-            case 4: ret = (or.getAmount()*dish.getPrice())+""; break;
+           // case 4: ret = (or.getAmount()*dish.getPrice())+""; break;
+            case 4: ret = or.getPrice()+""; break;
         }
         return ret;
     }

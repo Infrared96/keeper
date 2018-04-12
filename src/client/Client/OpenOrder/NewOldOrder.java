@@ -3,6 +3,7 @@ package client.Client.OpenOrder;
 import client.Model.NewOrder.NewOrder;
 import client.Model.NewOrder.NewOrderList;
 import client.Model.Order.Order;
+import client.Model.Order.OrderList;
 import client.facade.Facade;
 
 import javax.swing.*;
@@ -79,6 +80,7 @@ public class NewOldOrder extends JPanel {
             this.facade.getMessageManager().updateNewOrders(NewOrderList.parseString(this.arrayOrders));
             ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
             oot.setModel(new TableModelNewOrder(oldOrders, this.facade));
+            this.facade.getMessageManager().updateOrderPrice("{\"order_id\":" + or.getId() + ",\"price\":" + NewOrderList.sumPriceOrder(oldOrders) + "}");
         }
     }
 }

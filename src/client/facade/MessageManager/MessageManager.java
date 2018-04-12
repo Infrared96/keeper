@@ -65,4 +65,7 @@ public class MessageManager {
         return requestManager.sendRequest("GET_CATEGORYS","");
     }
 
+    public String updateOrderPrice(String str) {
+        return requestManager.sendRequest("UPDATE_ORDER_PRICE", str);
+    }
 }

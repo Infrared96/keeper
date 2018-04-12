@@ -35,9 +35,18 @@ public class NewOrderList {
             obj.put("dish_id", orders.get(i).getDish_id());
             obj.put("order_id", orders.get(i).getOrder_id());
             obj.put("amount", orders.get(i).getAmount());
+            obj.put("price", orders.get(i).getPrice());
             list.add(obj);
         }
         return list.toJSONString();
+    }
+
+    public static double sumPriceOrder(ArrayList<NewOrder> orders) {
+        double sum = 0;
+        for(int i = 0; i < orders.size(); i++) {
+            sum += orders.get(i).getPrice();
+        }
+        return sum;
     }
 //    public static ArrayList<Order> getOrders() {
 //        if(orders == null) {
