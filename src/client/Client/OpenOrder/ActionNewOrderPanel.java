@@ -1,5 +1,6 @@
 package client.Client.OpenOrder;
 
+import client.Model.Order.Order;
 import client.facade.Facade;
 
 import javax.swing.*;
@@ -7,13 +8,15 @@ import java.awt.*;
 
 public class ActionNewOrderPanel extends JPanel {
     private Facade facade;
+    private Order or;
     private JButton print;
     private JButton payCard;
     private JButton pay;
     private JLabel summ;
 
-    public ActionNewOrderPanel(Facade facade) {
+    public ActionNewOrderPanel(Facade facade, Order or) {
         this.facade = facade;
+        this.or = or;
         setLayout(new GridLayout(0,1));
         initActPanal();
     }
@@ -22,7 +25,7 @@ public class ActionNewOrderPanel extends JPanel {
         print = new JButton("Печатать чек");
         payCard = new JButton("Оплатить картой");
         pay = new JButton("Оплатить наличными");
-        summ = new JLabel("Сумма: " + facade.getClient().getTotalSum());
+        summ = new JLabel("Сумма: " + or.getPrice());
 
         add(print);
         add(payCard);

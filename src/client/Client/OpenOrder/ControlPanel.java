@@ -22,7 +22,7 @@ public class ControlPanel extends JPanel {
         ip.setSize(0, 30);
         this.add(ip);
         this.add(new CalculatePanel(this.facade));
-        this.add(new ActionNewOrderPanel(this.facade));
+        this.add(new ActionNewOrderPanel(this.facade, this.or));
 
     }
 }
