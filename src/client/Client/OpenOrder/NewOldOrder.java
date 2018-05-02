@@ -17,6 +17,7 @@ public class NewOldOrder extends JPanel {
     private NewOrderTable oot;
     private Facade facade;
     private ArrayList<NewOrder> arrayOrders;
+    private ControlPanel controlPanel;
 
 //    public ArrayList<NewOrder> getArrayOrders() {
 //        return arrayOrders;
@@ -27,9 +28,10 @@ public class NewOldOrder extends JPanel {
 //    }
 
     private Order or;
-    public NewOldOrder(Facade facade, Order or) {
+    public NewOldOrder(Facade facade, Order or, ControlPanel controlPanel) {
         this.facade = facade;
         this.or = or;
+        this.controlPanel = controlPanel;
         setLayout(new GridLayout(2,1));
 
         TableModelNewOrder tableNew = new TableModelNewOrder(this.arrayOrders, this.facade);
@@ -80,7 +82,9 @@ public class NewOldOrder extends JPanel {
             this.facade.getMessageManager().updateNewOrders(NewOrderList.parseString(this.arrayOrders));
             ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
             oot.setModel(new TableModelNewOrder(oldOrders, this.facade));
-            this.facade.getMessageManager().updateOrderPrice("{\"order_id\":" + or.getId() + ",\"price\":" + NewOrderList.sumPriceOrder(oldOrders) + "}");
+            or.setPrice(this.facade, NewOrderList.sumPriceOrder(oldOrders));
+            controlPanel.getActionNewOrderPanel().updateSumm();
+            //this.facade.getMessageManager().updateOrderPrice("{\"order_id\":" + or.getId() + ",\"price\":" + NewOrderList.sumPriceOrder(oldOrders) + "}")
         }
     }
 }

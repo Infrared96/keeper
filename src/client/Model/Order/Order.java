@@ -1,5 +1,7 @@
 package client.Model.Order;
 
+import client.Model.NewOrder.NewOrderList;
+import client.facade.Facade;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -35,6 +37,14 @@ public class Order {
         }
     }
 
+    public double getPrice(int id) {
+        return price;
+    }
+
+    public void setPrice(Facade facade, double price) {
+        this.price = price;
+        facade.getMessageManager().updateOrderPrice("{\"order_id\":" + this.id + ",\"price\":" + price + "}");
+    }
 
     public int getId() {
         return id;

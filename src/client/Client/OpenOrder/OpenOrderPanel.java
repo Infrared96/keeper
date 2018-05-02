@@ -20,9 +20,10 @@ public class OpenOrderPanel extends JPanel {
     }
 
     private void initOpenOrder() {
-        this.add(new ControlPanel(this.facade, this.or), BorderLayout.EAST);
+        ControlPanel controlPanel = new ControlPanel(this.facade, this.or);
+        this.add(controlPanel, BorderLayout.EAST);
         this.add(new BigOrderPanel(this.facade, this.or),BorderLayout.CENTER);
-        this.add(new NewOldOrder(this.facade, this.or), BorderLayout.WEST);
+        this.add(new NewOldOrder(this.facade, this.or, controlPanel), BorderLayout.WEST);
        // new ControlPanel();
 //        new CategoryPanel();
 //        new ListDish();

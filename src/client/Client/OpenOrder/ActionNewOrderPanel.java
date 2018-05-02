@@ -25,11 +25,21 @@ public class ActionNewOrderPanel extends JPanel {
         print = new JButton("Печатать чек");
         payCard = new JButton("Оплатить картой");
         pay = new JButton("Оплатить наличными");
-        summ = new JLabel("Сумма: " + or.getPrice());
+        summ = new JLabel(this.facade.updateOrderPrice(or.getPrice()));
 
         add(print);
         add(payCard);
         add(pay);
         add(summ);
+    }
+
+    public JLabel getSumm() {
+        return summ;
+    }
+
+    public void updateSumm() {
+        this.removeAll();
+        initActPanal();
+        this.updateUI();
     }
 }
