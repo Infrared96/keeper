@@ -59,30 +59,28 @@ public class NewOldOrder extends JPanel {
         JScrollPane oldScrollPane = new JScrollPane(oot);
         add(oldScrollPane);
 
-        bAdd.addActionListener(new addNewOrders(this.facade, this.arrayOrders, oot));
+        bAdd.addActionListener(new addNewOrders(oot));
     }
 
     private class addNewOrders implements ActionListener {
-        Facade facade;
-        ArrayList<NewOrder> arrayOrders;
         NewOrderTable oot;
-        addNewOrders(Facade facade, ArrayList<NewOrder> arrayOrders, NewOrderTable oot) {
-            this.facade = facade;
-            this.arrayOrders = arrayOrders;
+        addNewOrders( NewOrderTable oot) {
             this.oot = oot;
         }
 
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            this.arrayOrders = this.facade.getActualOrder();
-            this.facade.setActualOrder(new ArrayList<>());
-            this.facade.setTableModelNewOrder(new TableModelNewOrder(facade.getActualOrder(), facade));
-            this.facade.setModel_NewOrderTable(facade.getTableModelNewOrder());
-            this.facade.getMessageManager().updateNewOrders(NewOrderList.parseString(this.arrayOrders));
+            arrayOrders = facade.getActualOrder();
+            facade.setActualOrder(new ArrayList<>());
+            facade.setTableModelNewOrder(new TableModelNewOrder(facade.getActualOrder(), facade));
+            facade.setModel_NewOrderTable(facade.getTableModelNewOrder());
+            //ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
+
+            facade.getMessageManager().updateNewOrders(NewOrderList.parseString(arrayOrders));
             ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
-            oot.setModel(new TableModelNewOrder(oldOrders, this.facade));
-            or.setPrice(this.facade, NewOrderList.sumPriceOrder(oldOrders));
+            oot.setModel(new TableModelNewOrder(oldOrders, facade));
+            or.setPrice(facade, NewOrderList.sumPriceOrder(oldOrders));
             controlPanel.getActionNewOrderPanel().updateSumm();
             //this.facade.getMessageManager().updateOrderPrice("{\"order_id\":" + or.getId() + ",\"price\":" + NewOrderList.sumPriceOrder(oldOrders) + "}")
         }

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class TableModelNewOrder extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
     private ArrayList<NewOrder> ol = null;
-    private int count = 0;
     private Facade facade;
 
     public TableModelNewOrder(ArrayList<NewOrder> ol, Facade facade) {
@@ -40,7 +39,7 @@ public class TableModelNewOrder extends AbstractTableModel {
         String ret = null;
         switch(columnIndex)
         {
-            case 0: ret = ++count + ""; break;
+            case 0: ret = or.getId() + ""; break;
             case 1: ret = dish.getName(); break;
             case 2: ret = dish.getAmount()+"";break;
             case 3: ret = or.getAmount()+""; break;

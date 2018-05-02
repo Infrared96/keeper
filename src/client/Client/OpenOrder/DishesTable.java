@@ -65,7 +65,22 @@ public class DishesTable extends JTable {
             if(e.getClickCount() == 2 && e.getModifiersEx() == 0) {
                 int row = table.rowAtPoint(e.getPoint());
                 Dish dish = this.dishes.get(row);
-                facade.addActualOrder(new NewOrder(dish, this.or, 1));
+                boolean flag = true;
+                if(facade.getActualOrder().size() != 0) {
+                    for( NewOrder order : facade.getActualOrder()) {
+                        if(order.getDish_id() == dish.getId()) {
+                            flag = false;
+                            order.setAmount(order.getAmount() + 1);
+                            order.setPrice(dish.getPrice()*order.getAmount());
+                            break;
+                        }
+                    }
+                    if(flag) {
+                        facade.addActualOrder(new NewOrder(dish, this.or, 1));
+                    }
+                } else {
+                    facade.addActualOrder(new NewOrder(dish, this.or, 1));
+                }
                 facade.setTableModelNewOrder(new TableModelNewOrder(facade.getActualOrder(), facade));
                 facade.setModel_NewOrderTable(facade.getTableModelNewOrder());
             }
