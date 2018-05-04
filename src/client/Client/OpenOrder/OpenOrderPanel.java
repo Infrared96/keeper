@@ -24,9 +24,5 @@ public class OpenOrderPanel extends JPanel {
         this.add(controlPanel, BorderLayout.EAST);
         this.add(new BigOrderPanel(this.facade, this.or),BorderLayout.CENTER);
         this.add(new NewOldOrder(this.facade, this.or, controlPanel), BorderLayout.WEST);
-       // new ControlPanel();
-//        new CategoryPanel();
-//        new ListDish();
-//        new OrderPanel();
     }
 }

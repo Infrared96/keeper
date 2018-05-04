@@ -61,6 +61,10 @@ public class MessageManager {
         return requestManager.sendRequest("UPDATE_NEW_ORDERS", str);
     }
 
+    public String createNewOrders(String str) {
+        return requestManager.sendRequest("CREATE_NEW_ORDERS", str);
+    }
+
     public String getCategorys() {
         return requestManager.sendRequest("GET_CATEGORYS","");
     }

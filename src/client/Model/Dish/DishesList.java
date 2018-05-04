@@ -43,6 +43,17 @@ public class DishesList {
         return dishe;
     }
 
+    public static Dish getDishId(ArrayList<Dish> dishes, int id) {
+        Dish itsDish = null;
+        for(Dish dish: dishes) {
+            if(dish.getId() == id) {
+                itsDish = dish;
+                break;
+            }
+        }
+        return itsDish;
+    }
+
 //    public static ArrayList<Dish> getdishes() {
 //        if(dishes == null) {
 //            dishes = new ArrayList<>();

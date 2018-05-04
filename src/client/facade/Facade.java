@@ -7,6 +7,8 @@ import client.Client.OpenOrder.TableModelDishes;
 import client.Client.OpenOrder.TableModelNewOrder;
 import client.Client.OrderTable;
 import client.Client.TableModel;
+import client.Model.Dish.Dish;
+import client.Model.Dish.DishesList;
 import client.Model.NewOrder.NewOrder;
 import client.facade.MessageManager.MessageManager;
 import client.facade.RequestManager.RequestManager;
@@ -20,6 +22,7 @@ public class Facade {
     public boolean isLogin = false;
 
     private Client client = null;
+    private ArrayList<Dish> dishes = null;
 
     private TableModel tm = null;
     private TableModelNewOrder tableModelNewOrder = null;
@@ -35,6 +38,11 @@ public class Facade {
     public Facade() {
         this.requestManager = new RequestManager(this);
         this.messageManager = new MessageManager(this.requestManager);
+        this.dishes = DishesList.parseDishes(this.getMessageManager().getDishes(""));
+    }
+
+    public ArrayList<Dish> getDishes() {
+        return dishes;
     }
 
     public void setModel_DishesTable(TableModelDishes table) {
@@ -119,9 +127,5 @@ public class Facade {
 
     public void setOrderTable(OrderTable ot) {
         this.ot = ot;
-    }
-
-    public String updateOrderPrice(double price) {
-        return "Cумма: " + price;
     }
 }

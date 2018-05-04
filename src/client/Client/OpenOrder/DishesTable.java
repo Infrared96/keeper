@@ -60,7 +60,6 @@ public class DishesTable extends JTable {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            System.out.println( "click = " + e.getClickCount() + "mouse: " +  e.getModifiersEx() );
 
             if(e.getClickCount() == 2 && e.getModifiersEx() == 0) {
                 int row = table.rowAtPoint(e.getPoint());

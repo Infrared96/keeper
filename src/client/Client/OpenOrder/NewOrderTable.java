@@ -25,8 +25,6 @@ public class NewOrderTable extends JTable {
             }
 
         });
-
-       // this.addMouseListener(new OpenNewOrder(this));
     }
 }
 

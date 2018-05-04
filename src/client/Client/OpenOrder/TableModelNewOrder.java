@@ -35,11 +35,12 @@ public class TableModelNewOrder extends AbstractTableModel {
     @Override
     public String getValueAt(int rowIndex, int columnIndex) {
         NewOrder or = ol.get(rowIndex);
-        Dish dish = DishesList.parseDishe(facade.getMessageManager().getDishId("{\"id\":" + or.getDish_id() + "}"));
+        //Dish dish = DishesList.parseDishe(facade.getMessageManager().getDishId("{\"id\":" + or.getDish_id() + "}"));
+        Dish dish = DishesList.getDishId(facade.getDishes(), or.getDish_id());
         String ret = null;
         switch(columnIndex)
         {
-            case 0: ret = or.getId() + ""; break;
+            case 0: ret = rowIndex + 1 + ""; break;
             case 1: ret = dish.getName(); break;
             case 2: ret = dish.getAmount()+"";break;
             case 3: ret = or.getAmount()+""; break;
