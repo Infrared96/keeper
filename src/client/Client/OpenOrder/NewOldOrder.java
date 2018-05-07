@@ -69,8 +69,8 @@ public class NewOldOrder extends JPanel {
 
             ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
             ArrayList<NewOrder> updateOrders = oldOrders;
-            for(int j = 0; j < arrayOrders.size(); j++) {
-                for(int i = 0; i < updateOrders.size(); i++) {
+            for(int i = 0; i < updateOrders.size(); i++) {
+                for(int j = 0; j < arrayOrders.size(); j++) {
                     if(updateOrders.get(i).getDish_id() == arrayOrders.get(j).getDish_id()) {
                         updateOrders.get(i).setPrice(updateOrders.get(i).getPrice() + arrayOrders.get(j).getPrice());
                         updateOrders.get(i).setAmount(updateOrders.get(i).getAmount() + arrayOrders.get(j).getAmount());

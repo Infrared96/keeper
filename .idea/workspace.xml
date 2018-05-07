@@ -8,29 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fba069b3-82cd-459a-83e0-a5cc12f063af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/ActionNewOrderPanel.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/ActionNewOrderPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/BigOrderPanel.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/BigOrderPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/DishesTable$addNewOrder.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/DishesTable$addNewOrder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/NewOldOrder.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/NewOldOrder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/NewOrderTable.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/NewOrderTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/OpenOrderPanel.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/OpenOrderPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/TableModelNewOrder.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/OpenOrder/TableModelNewOrder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Model/Dish/DishesList.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Model/Dish/DishesList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/facade/Facade.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/facade/Facade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/facade/MessageManager/MessageManager.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/facade/MessageManager/MessageManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/facade/RequestManager/RequestManager.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/facade/RequestManager/RequestManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/ActionNewOrderPanel.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/ActionNewOrderPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/BigOrderPanel.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/BigOrderPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/DishesTable.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/DishesTable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/NewOrderTable.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/NewOrderTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/OpenOrderPanel.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/OpenOrderPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelNewOrder.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelNewOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Model/Dish/DishesList.java" afterPath="$PROJECT_DIR$/src/client/Model/Dish/DishesList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/facade/Facade.java" afterPath="$PROJECT_DIR$/src/client/facade/Facade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/facade/MessageManager/MessageManager.java" afterPath="$PROJECT_DIR$/src/client/facade/MessageManager/MessageManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/facade/RequestManager/RequestManager.java" afterPath="$PROJECT_DIR$/src/client/facade/RequestManager/RequestManager.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,20 +25,22 @@
       <file leaf-file-name="TableModelDishes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelDishes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="230">
               <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#508#509#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TableModelNewOrder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TableModelNewOrder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelNewOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="44" column="52" lean-forward="true" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+            <state relative-caret-position="561">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#763#764#0" expanded="true" />
@@ -71,7 +53,7 @@
       <file leaf-file-name="ActionNewOrderPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/ActionNewOrderPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="366">
               <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="37" selection-end-column="5" />
               <folding>
                 <element signature="e#873#874#0" expanded="true" />
@@ -84,7 +66,7 @@
       <file leaf-file-name="DishesTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/DishesTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="442">
               <caret line="37" column="101" lean-forward="false" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
               <folding />
             </state>
@@ -111,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewOldOrder.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewOldOrder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="64" column="50" lean-forward="true" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+            <state relative-caret-position="368">
+              <caret line="75" column="99" lean-forward="true" selection-start-line="75" selection-start-column="99" selection-end-line="75" selection-end-column="99" />
               <folding>
                 <element signature="class#delButtonNewOrders#0;class#NewOldOrder#0" expanded="false" />
                 <element signature="class#delNewOrders#0;class#NewOldOrder#0" expanded="false" />
@@ -255,8 +237,8 @@
         <option value="$PROJECT_DIR$/src/client/Model/Dish/DishesList.java" />
         <option value="$PROJECT_DIR$/src/client/facade/MessageManager/MessageManager.java" />
         <option value="$PROJECT_DIR$/src/client/facade/RequestManager/RequestManager.java" />
-        <option value="$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java" />
         <option value="$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelNewOrder.java" />
+        <option value="$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java" />
       </list>
     </option>
   </component>
@@ -620,18 +602,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java</url>
-          <line>69</line>
+          <line>72</line>
           <properties />
-          <option name="timeStamp" value="70" />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="71" />
+      <option name="time" value="73" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="element" language="JAVA" />
-        <watch expression="order.getDish_id()" language="JAVA" />
-        <watch expression="dish.getId()" language="JAVA" />
+        <watch expression="updateOrders" language="JAVA" />
+        <watch expression="updateOrders.get(i).getDish_id() == arrayOrders.get(j).getDish_id()" language="JAVA" />
+        <watch expression="arrayOrders" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -934,16 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelDishes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/facade/Facade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -959,17 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/ActionNewOrderPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#900#901#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/NewOrderTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -977,14 +938,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/DishesTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="37" column="101" lean-forward="false" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,6 +962,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelNewOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/ActionNewOrderPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#900#901#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/DishesTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="37" column="101" lean-forward="false" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/BigOrderPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1025,25 +1009,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java">
+    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelDishes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="64" column="50" lean-forward="true" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+        <state relative-caret-position="230">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="class#delButtonNewOrders#0;class#NewOldOrder#0" expanded="false" />
-            <element signature="class#delNewOrders#0;class#NewOldOrder#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/TableModelNewOrder.java">
+    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="44" column="52" lean-forward="true" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+        <state relative-caret-position="368">
+          <caret line="75" column="99" lean-forward="true" selection-start-line="75" selection-start-column="99" selection-end-line="75" selection-end-column="99" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
+            <element signature="class#delButtonNewOrders#0;class#NewOldOrder#0" expanded="false" />
+            <element signature="class#delNewOrders#0;class#NewOldOrder#0" expanded="false" />
           </folding>
         </state>
       </provider>
