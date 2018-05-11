@@ -12,21 +12,23 @@ import java.util.ArrayList;
 public class BigOrderPanel extends JPanel {
     private Facade facade;
     private Order or;
+    private DishesTable dt;
     public BigOrderPanel(Facade facade, Order or) {
-        this.facade = facade;
-        this.or = or;
-
         setLayout(new BorderLayout());
         setBackground(Color.white);
+        this.facade = facade;
+        this.or = or;
         init();
     }
 
     private void init() {
-        this.add(new ButtonPanel(this.facade,this), BorderLayout.SOUTH);
-        ArrayList<Dish> dishes = facade.getDishes();
-        DishesTable dt = new DishesTable(this.facade, dishes, this.or);
+        this.add(new ButtonPanel(this.facade,this, this.or, dt), BorderLayout.SOUTH);
+        facade.setDishesTable(new DishesTable(this.facade, facade.getDishes(), this.or));
+        dt = facade.getDishesTable();
 
         JScrollPane dishScroll = new JScrollPane(dt);
         add(dishScroll, BorderLayout.CENTER);
     }
+
+
 }

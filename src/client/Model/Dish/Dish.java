@@ -9,13 +9,13 @@ public class Dish {
     private int id;
     private String name;
     private double price;
-    private String category;
+    private int category;
     //private ArrayList<Product> productList;
     private String productList;
     private String amount_products;
     private double amount;
 
-    public Dish(int id, String name, double price, String category, String productList, String amount_products, double amount) {
+    public Dish(int id, String name, double price, int category, String productList, String amount_products, double amount) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -33,7 +33,7 @@ public class Dish {
             this.id = Integer.parseInt(String.valueOf(element.get("id")));
             this.name = String.valueOf(element.get("name"));
             this.price = Double.valueOf(String.valueOf(element.get("price")));
-            this.category = String.valueOf(element.get("category_id"));
+            this.category = Integer.valueOf(String.valueOf(element.get("category_id")));
            // this.productList = ProductList.getProductsId(facade.getMessageManager().getDishesId(String.valueOf(element.get("products_id"))));
             this.productList = String.valueOf(element.get("products_id"));
             this.amount_products = String.valueOf(element.get("amount_products"));
@@ -85,11 +85,11 @@ public class Dish {
         this.amount = amount;
     }
 
-    public String getCategory() {
+    public int getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(int category) {
         this.category = category;
     }
 

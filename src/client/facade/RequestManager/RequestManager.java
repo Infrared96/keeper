@@ -24,7 +24,7 @@ public class RequestManager {
         this.postRequests = new String[]{"CREATE_USER","CREATE_NEW_ORDERS", "CREATE_DISH", "CREATE_PRODUCT", "CREATE_ORDER", "UPDATE_USER", "UPDATE_DISH", "UPDATE_PRODUCT", "UPDATE_ORDER", "UPDATE_NEW_ORDERS", "UPDATE_ORDER_PRICE"};
         this.getRequests = new String[]{"GET_USERS", "GET_USER", "GET_USER_LOGIN",
                 "GET_PRODUCT", "GET_PRODUCTS", "GET_PRODUCTS_ID",
-                "GET_DISH", "GET_DISHES", "GET_DISH_ID",
+                "GET_DISH", "GET_DISHES", "GET_DISH_ID", "GET_DISH_CATEGORY",
                 "GET_ORDER", "GET_ORDERS", "GET_ORDERS_USER", "GET_ORDER_ID",
                 "GET_CATEGORYS",
                 "GET_NEW_ORDERS_ID"};

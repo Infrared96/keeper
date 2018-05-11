@@ -45,6 +45,10 @@ public class MessageManager {
         return requestManager.sendRequest("GET_DISH_ID", str);
     }
 
+    public String getDishCategory(String str) {
+        return requestManager.sendRequest("GET_DISH_CATEGORY", str);
+    }
+
     public String getUserLogin(String str) {
         return requestManager.sendRequest("GET_USER_LOGIN", str);
     }
