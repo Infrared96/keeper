@@ -1,10 +1,12 @@
 package client.Client.OpenOrder;
 
+import client.Model.Dish.Dish;
 import client.Model.NewOrder.NewOrder;
 import client.Model.NewOrder.NewOrderList;
 import client.Model.Order.Order;
-import client.Model.Order.OrderList;
+import client.Model.Product.Product;
 import client.facade.Facade;
+import org.json.simple.JSONObject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NewOldOrder extends JPanel {
     private NewOrderTable not;
@@ -58,6 +62,35 @@ public class NewOldOrder extends JPanel {
         bDel.addActionListener(new delButtonNewOrders());
     }
 
+    private String getProducts(ArrayList<NewOrder> arrayOrders, ArrayList<Dish> dishes) {
+        //Поиск всех продуктов для списания с базы
+        Map products = new HashMap();
+        for(int j = 0; j < arrayOrders.size();j++) {
+            int dish_id = arrayOrders.get(j).getDish_id();
+            double amount = arrayOrders.get(j).getAmount();
+            for(int k = 0; k < dishes.size(); k++) {
+                if(dishes.get(k).getId() == dish_id) {
+                    String[] products_id = dishes.get(k).getProductList().split(",");
+                    String[] products_amount = dishes.get(k).getAmount_products().split(",");
+                    for(int l = 0; l < products_id.length; l++) {
+                        if(products.get(products_id[l]) == null) {
+                            products.put(products_id[l], Double.parseDouble(String.valueOf(products_amount[l])) * amount);
+                        } else {
+                            String amount_product = products.get(products_id[l]).toString();
+                            products.put(products_id[l], (Double.parseDouble(String.valueOf(products_amount[l])) * amount  + Double.parseDouble(String.valueOf(amount_product))));
+                        }
+                    }
+                }
+            }
+        }
+
+        JSONObject json = new JSONObject();
+        json.putAll( products );
+
+
+        return json.toJSONString();
+    }
+
     private class addNewOrders implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e)
@@ -66,6 +99,8 @@ public class NewOldOrder extends JPanel {
             facade.setActualOrder(new ArrayList<>());
             facade.setTableModelNewOrder(new TableModelNewOrder(facade.getActualOrder(), facade));
             facade.setModel_NewOrderTable(facade.getTableModelNewOrder());
+
+            getProducts(arrayOrders, facade.getDishes());
 
             ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
             ArrayList<NewOrder> updateOrders = oldOrders;
