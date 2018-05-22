@@ -17,9 +17,8 @@ public class NewOrder {
     private double amount;
     private double price;
     private boolean close;
-    private String date;
 
-    public NewOrder(int id, int dish_id, int order_id, double amount, double price, boolean close, String date) {
+    public NewOrder(int id, int dish_id, int order_id, double amount, double price, boolean close) {
         this.id = id;
         this.dish_id = dish_id;
         this.order_id = order_id;

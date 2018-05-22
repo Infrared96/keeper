@@ -1,6 +1,5 @@
 package client.Model.Order;
 
-import client.Model.NewOrder.NewOrderList;
 import client.facade.Facade;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,6 +11,10 @@ public class Order {
     private int table_num;
     private int count;
     private double price;
+    private boolean close;
+    private boolean print;
+    private String date_open;
+    private String date_close;
 
     public Order(int id, int user_id, int table_num, int count, double price) {
         this.id = id;
@@ -31,6 +34,10 @@ public class Order {
             this.table_num = Integer.parseInt(String.valueOf(element.get("table_num")));
             this.count = Integer.parseInt(String.valueOf(element.get("count")));
             this.price = Double.parseDouble(String.valueOf(element.get("price")));
+            this.close = Boolean.parseBoolean(String.valueOf(element.get("close")));
+            this.print = Boolean.parseBoolean(String.valueOf(element.get("print")));
+            this.date_open = String.valueOf(element.get("date_open"));
+            this.date_close = String.valueOf(element.get("date_close"));
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -84,6 +91,38 @@ public class Order {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public boolean isClose() {
+        return close;
+    }
+
+    public void setClose(boolean close) {
+        this.close = close;
+    }
+
+    public boolean isPrint() {
+        return print;
+    }
+
+    public void setPrint(boolean print) {
+        this.print = print;
+    }
+
+    public String getDate_open() {
+        return date_open;
+    }
+
+    public void setDate_open(String date_open) {
+        this.date_open = date_open;
+    }
+
+    public String getDate_close() {
+        return date_close;
+    }
+
+    public void setDate_close(String date_close) {
+        this.date_close = date_close;
     }
 
     //    private int id;
