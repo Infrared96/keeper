@@ -30,13 +30,13 @@ public class ButtonPanel extends JPanel {
 
         ArrayList<Category> categories = CategoryList.parseCategorys(facade.getMessageManager().getCategorys());
         if(categories.size() <= 12) {
-            for(int i = 0; i < categories.size()-1; i++) {
+            for(int i = 0; i < categories.size(); i++) {
                 JButton button = new JButton(categories.get(i).getName());
                 button.setPreferredSize(new Dimension(60,60));
                 button.addActionListener(new OpenCategory(i+1));
                 add(button);
             }
-            JButton button = new JButton(categories.get(categories.size()-1).getName());
+            JButton button = new JButton("Все блюда");
             button.setPreferredSize(new Dimension(60,60));
             button.addActionListener(new OpenAll());
             add(button);

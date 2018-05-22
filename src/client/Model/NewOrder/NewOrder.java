@@ -6,6 +6,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class NewOrder {
     private int id;
@@ -13,13 +16,16 @@ public class NewOrder {
     private int order_id;
     private double amount;
     private double price;
+    private boolean close;
+    private String date;
 
-    public NewOrder(int id, int dish_id, int order_id, double amount, double price) {
+    public NewOrder(int id, int dish_id, int order_id, double amount, double price, boolean close, String date) {
         this.id = id;
         this.dish_id = dish_id;
         this.order_id = order_id;
         this.amount = amount;
         this.price = price;
+        this.close = close;
     }
 
     public NewOrder(Dish dish, Order order, int amount) {
@@ -39,7 +45,7 @@ public class NewOrder {
             this.order_id = Integer.parseInt(String.valueOf(element.get("order_id")));
             this.amount = Double.parseDouble(String.valueOf(element.get("amount")));
             this.price = Double.parseDouble(String.valueOf(element.get("price")));
-
+            this.close = Boolean.parseBoolean(String.valueOf(element.get("close")));
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -83,5 +89,13 @@ public class NewOrder {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public boolean isClose() {
+        return close;
+    }
+
+    public void setClose(boolean close) {
+        this.close = close;
     }
 }

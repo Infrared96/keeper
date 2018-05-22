@@ -152,7 +152,7 @@ public class NewOldOrder extends JPanel {
                 arrayOrders = facade.getActualOrder();
                 NewOrder order = arrayOrders.get(row);
                 if(order.getAmount() > 1) {
-                    order.setPrice( order.getPrice() - order.getPrice()/order.getAmount() ); // минусуем 1 порцию
+                    order.setPrice( order.getPrice() - order.getPrice()/order.getAmount()); // минусуем 1 порцию
                     order.setAmount(order.getAmount() - 1);
                 } else {
                     arrayOrders.remove(row);

@@ -115,7 +115,7 @@ public class AddOrderPanel extends JPanel {
 
                     ArrayList<Order> orders = null;
                     String ordersJSON = facade.getMessageManager().createOrder(OrderList.forCreateOrder(table, count, this.user.getId()));
-                    if (ordersJSON != null) {
+                    if (ordersJSON != null || !ordersJSON.equals("")) {
                         orders = OrderList.parseUserOrders(ordersJSON);
                         //обновление таблицы
                         this.facade.getClient().setOrders(orders);

@@ -49,7 +49,7 @@ public class ClientPanel extends JPanel {
             this.client = new Client(this.facade, this.user);
             this.facade.setClient(this.client);
 
-            statusbar = new JLabel("Пользователь: " + this.user.getName()+ "  Сумма не закрытых счетов: " + this.client.getTotalSum());
+            statusbar = new JLabel("Пользователь: " + this.user.getName()+  "Общая касса :"  + "  Сумма не закрытых счетов: " + this.client.getTotalSum());
             statusbar.setFont(new Font(statusbar.getName(), Font.BOLD, 14));
             this.add(statusbar, BorderLayout.SOUTH);
 
