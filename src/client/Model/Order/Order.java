@@ -34,8 +34,8 @@ public class Order {
             this.table_num = Integer.parseInt(String.valueOf(element.get("table_num")));
             this.count = Integer.parseInt(String.valueOf(element.get("count")));
             this.price = Double.parseDouble(String.valueOf(element.get("price")));
-            this.close = Boolean.parseBoolean(String.valueOf(element.get("close")));
-            this.print = Boolean.parseBoolean(String.valueOf(element.get("print")));
+            this.close = Integer.parseInt(String.valueOf(element.get("close"))) == 1 ? true : false;
+            this.print = Integer.parseInt(String.valueOf(element.get("print"))) == 1 ? true : false;
             this.date_open = String.valueOf(element.get("date_open"));
             this.date_close = String.valueOf(element.get("date_close"));
 
@@ -107,6 +107,11 @@ public class Order {
 
     public void setPrint(boolean print) {
         this.print = print;
+    }
+
+    public void setPrint(Facade facade, boolean print) {
+        this.print = print;
+        facade.getMessageManager().updateOrderPrint("{\"order_id\":" + this.id + ",\"print\":" + print + "}");
     }
 
     public String getDate_open() {

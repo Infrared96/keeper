@@ -76,4 +76,9 @@ public class MessageManager {
     public String updateOrderPrice(String str) {
         return requestManager.sendRequest("UPDATE_ORDER_PRICE", str);
     }
+
+    public String updateOrderPrint(String str) {
+        return requestManager.sendRequest("UPDATE_ORDER_PRINT", str);
+    }
+
 }

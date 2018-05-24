@@ -96,33 +96,38 @@ public class NewOldOrder extends JPanel {
         public void actionPerformed(ActionEvent e)
         {
             arrayOrders = facade.getActualOrder();
-            facade.setActualOrder(new ArrayList<>());
-            facade.setTableModelNewOrder(new TableModelNewOrder(facade.getActualOrder(), facade));
-            facade.setModel_NewOrderTable(facade.getTableModelNewOrder());
+            if(arrayOrders.size() > 0) {
+                facade.setActualOrder(new ArrayList<>());
+                facade.setTableModelNewOrder(new TableModelNewOrder(facade.getActualOrder(), facade));
+                facade.setModel_NewOrderTable(facade.getTableModelNewOrder());
 
-            getProducts(arrayOrders, facade.getDishes());
+                //Для того чтоб можно было заново распечатать чек
+                if(or.isPrint()) {
+                    or.setPrint(facade, false);
+                }
 
-            ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
-            ArrayList<NewOrder> updateOrders = oldOrders;
-            for(int i = 0; i < updateOrders.size(); i++) {
-                for(int j = 0; j < arrayOrders.size(); j++) {
-                    if(updateOrders.get(i).getDish_id() == arrayOrders.get(j).getDish_id()) {
-                        updateOrders.get(i).setPrice(updateOrders.get(i).getPrice() + arrayOrders.get(j).getPrice());
-                        updateOrders.get(i).setAmount(updateOrders.get(i).getAmount() + arrayOrders.get(j).getAmount());
-                        arrayOrders.remove(j);
-                        break;
+                getProducts(arrayOrders, facade.getDishes());
+
+                ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
+                ArrayList<NewOrder> updateOrders = oldOrders;
+                for(int i = 0; i < updateOrders.size(); i++) {
+                    for(int j = 0; j < arrayOrders.size(); j++) {
+                        if(updateOrders.get(i).getDish_id() == arrayOrders.get(j).getDish_id()) {
+                            updateOrders.get(i).setPrice(updateOrders.get(i).getPrice() + arrayOrders.get(j).getPrice());
+                            updateOrders.get(i).setAmount(updateOrders.get(i).getAmount() + arrayOrders.get(j).getAmount());
+                            arrayOrders.remove(j);
+                            break;
+                        }
                     }
                 }
-            }
 
-            facade.getMessageManager().updateNewOrders(NewOrderList.parseString(updateOrders));//обновление старых ордеров
-            facade.getMessageManager().createNewOrders(NewOrderList.parseString(arrayOrders));//добавление новых ордеров
-            //ArrayList<NewOrder> oldOrders = NewOrderList.parseNewOrders(facade.getMessageManager().getNewOrdersId("{\"order_id\":" + or.getId() + "}"));
-            updateOrders.addAll(arrayOrders);
-            oot.setModel(new TableModelNewOrder(updateOrders, facade));
-            or.setPrice(facade, NewOrderList.sumPriceOrder(updateOrders));
-            controlPanel.getActionNewOrderPanel().updateSumm();
-            //this.facade.getMessageManager().updateOrderPrice("{\"order_id\":" + or.getId() + ",\"price\":" + NewOrderList.sumPriceOrder(oldOrders) + "}")
+                facade.getMessageManager().updateNewOrders(NewOrderList.parseString(updateOrders));//обновление старых ордеров
+                facade.getMessageManager().createNewOrders(NewOrderList.parseString(arrayOrders));//добавление новых ордеров
+                updateOrders.addAll(arrayOrders);
+                oot.setModel(new TableModelNewOrder(updateOrders, facade));
+                or.setPrice(facade, NewOrderList.sumPriceOrder(updateOrders));
+                controlPanel.getActionNewOrderPanel().updateSumm();
+            }
         }
     }
 

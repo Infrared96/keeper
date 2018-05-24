@@ -21,7 +21,7 @@ public class RequestManager {
         this.facadeAPI = facade;
 
         this.serverUrl = "http://localhost/keeper/www";
-        this.postRequests = new String[]{"CREATE_USER","CREATE_NEW_ORDERS", "CREATE_DISH", "CREATE_PRODUCT", "CREATE_ORDER", "UPDATE_USER", "UPDATE_DISH", "UPDATE_PRODUCT", "UPDATE_ORDER", "UPDATE_NEW_ORDERS", "UPDATE_ORDER_PRICE"};
+        this.postRequests = new String[]{"CREATE_USER","CREATE_NEW_ORDERS", "CREATE_DISH", "CREATE_PRODUCT", "CREATE_ORDER", "UPDATE_USER", "UPDATE_DISH", "UPDATE_PRODUCT", "UPDATE_ORDER", "UPDATE_NEW_ORDERS", "UPDATE_ORDER_PRICE", "UPDATE_ORDER_PRINT"};
         this.getRequests = new String[]{"GET_USERS", "GET_USER", "GET_USER_LOGIN",
                 "GET_PRODUCT", "GET_PRODUCTS", "GET_PRODUCTS_ID",
                 "GET_DISH", "GET_DISHES", "GET_DISH_ID", "GET_DISH_CATEGORY",
