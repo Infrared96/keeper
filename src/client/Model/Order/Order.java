@@ -111,7 +111,7 @@ public class Order {
 
     public void setPrint(Facade facade, boolean print) {
         this.print = print;
-        facade.getMessageManager().updateOrderPrint("{\"order_id\":" + this.id + ",\"print\":" + print + "}");
+        facade.getMessageManager().updateOrderPrint("{\"order_id\":" + this.id + ",\"print\":" + (print ? 1 : 0) + "}");
     }
 
     public String getDate_open() {
