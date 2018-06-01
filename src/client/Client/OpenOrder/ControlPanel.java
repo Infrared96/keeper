@@ -10,9 +10,11 @@ public class ControlPanel extends JPanel {
     private Facade facade;
     private Order or;
     private ActionNewOrderPanel actionNewOrderPanel;
-    public ControlPanel(Facade facade, Order or) {
+    private JFrame frame;
+    public ControlPanel(Facade facade, Order or, JFrame frame) {
         this.facade = facade;
         this.or = or;
+        this.frame = frame;
 
         setLayout(new GridLayout(0,1, 1, 10));
         init();
@@ -21,7 +23,7 @@ public class ControlPanel extends JPanel {
     private void init() {
         InfoPanel ip = new InfoPanel(this.facade, this.or);
         ip.setSize(0, 30);
-        this.actionNewOrderPanel = new ActionNewOrderPanel(this.facade, this.or);
+        this.actionNewOrderPanel = new ActionNewOrderPanel(this.facade, this.or, this.frame);
         this.add(ip);
         this.add(new CalculatePanel(this.facade));
         this.add(this.actionNewOrderPanel);

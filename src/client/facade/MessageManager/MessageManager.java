@@ -81,4 +81,7 @@ public class MessageManager {
         return requestManager.sendRequest("UPDATE_ORDER_PRINT", str);
     }
 
+    public String setCloseOrder(String str) {
+        return requestManager.sendRequest("SET_CLOSE_ORDER", str);
+    }
 }

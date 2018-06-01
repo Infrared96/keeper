@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class ActionNewOrderPanel extends JPanel {
     private Facade facade;
@@ -15,10 +16,12 @@ public class ActionNewOrderPanel extends JPanel {
     private JButton payCard;
     private JButton pay;
     private JLabel summ;
+    private JFrame frame;
 
-    public ActionNewOrderPanel(Facade facade, Order or) {
+    public ActionNewOrderPanel(Facade facade, Order or, JFrame frame) {
         this.facade = facade;
         this.or = or;
+        this.frame = frame;
         setLayout(new GridLayout(0,1));
         initActPanal();
     }
@@ -30,6 +33,7 @@ public class ActionNewOrderPanel extends JPanel {
         summ = new JLabel("Сумма: " + or.getPrice());
 
         print.addActionListener(new printCheck());
+        pay.addActionListener(new payCash());
 
         add(print);
         add(payCard);
@@ -48,6 +52,19 @@ public class ActionNewOrderPanel extends JPanel {
         {
             or.setPrint(facade, true);
             print.setEnabled(false);
+        }
+    }
+
+    private class payCash implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            if(or.isPrint()) {
+                or.closeOrder(facade, true);
+                WindowEvent winClosingEvent = new WindowEvent( frame, WindowEvent.WINDOW_CLOSING );
+                Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent( winClosingEvent );
+            }
         }
     }
 

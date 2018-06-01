@@ -4,7 +4,6 @@ import client.Model.Dish.Dish;
 import client.Model.NewOrder.NewOrder;
 import client.Model.NewOrder.NewOrderList;
 import client.Model.Order.Order;
-import client.Model.Product.Product;
 import client.facade.Facade;
 import org.json.simple.JSONObject;
 

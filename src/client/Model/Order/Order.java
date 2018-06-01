@@ -13,6 +13,7 @@ public class Order {
     private double price;
     private boolean close;
     private boolean print;
+    private boolean cash;
     private String date_open;
     private String date_close;
 
@@ -36,12 +37,19 @@ public class Order {
             this.price = Double.parseDouble(String.valueOf(element.get("price")));
             this.close = Integer.parseInt(String.valueOf(element.get("close"))) == 1 ? true : false;
             this.print = Integer.parseInt(String.valueOf(element.get("print"))) == 1 ? true : false;
+            this.cash = Integer.parseInt(String.valueOf(element.get("cash"))) == 1 ? true : false;
             this.date_open = String.valueOf(element.get("date_open"));
             this.date_close = String.valueOf(element.get("date_close"));
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    public void closeOrder(Facade facade, boolean cash) {
+        this.cash = cash;
+        this.close = true;
+        facade.getMessageManager().setCloseOrder("{\"order_id\":" + this.id + ",\"cash\":" + this.cash + ",\"close\":" + this.close + "}");
     }
 
     public double getPrice(int id) {
@@ -112,6 +120,14 @@ public class Order {
     public void setPrint(Facade facade, boolean print) {
         this.print = print;
         facade.getMessageManager().updateOrderPrint("{\"order_id\":" + this.id + ",\"print\":" + (print ? 1 : 0) + "}");
+    }
+
+    public boolean isCash() {
+        return cash;
+    }
+
+    public void setCash(boolean cash) {
+        this.cash = cash;
     }
 
     public String getDate_open() {

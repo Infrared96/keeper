@@ -28,7 +28,7 @@ public class Client
         this.orders = orders;
     }
 
-    public double getTotalSum() {
+    public double getNotTotalSum() {
         if (orders.size() == 0) {
             totalSum = 0.0;
         } else if(totalSum == 0.0) {

@@ -13,7 +13,6 @@ import client.Model.NewOrder.NewOrder;
 import client.facade.MessageManager.MessageManager;
 import client.facade.RequestManager.RequestManager;
 
-import javax.swing.*;
 import java.util.ArrayList;
 
 public class Facade {

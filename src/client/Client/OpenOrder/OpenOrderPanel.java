@@ -9,10 +9,12 @@ import java.awt.*;
 public class OpenOrderPanel extends JPanel {
     private Facade facade;
     private Order or;
+    private JFrame frame;
 
-    public OpenOrderPanel(Facade facade, Order or) {
+    public OpenOrderPanel(Facade facade, Order or, JFrame frame) {
         this.facade = facade;
         this.or = or;
+        this.frame = frame;
 
         setLayout(new BorderLayout());
         setBackground(Color.white);
@@ -20,7 +22,7 @@ public class OpenOrderPanel extends JPanel {
     }
 
     private void initOpenOrder() {
-        ControlPanel controlPanel = new ControlPanel(this.facade, this.or);
+        ControlPanel controlPanel = new ControlPanel(this.facade, this.or, this.frame);
         this.add(controlPanel, BorderLayout.EAST);
         this.add(new BigOrderPanel(this.facade, this.or),BorderLayout.CENTER);
         this.add(new NewOldOrder(this.facade, this.or, controlPanel), BorderLayout.WEST);
