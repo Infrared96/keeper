@@ -20,6 +20,25 @@ public class Client
         return orders;
     }
 
+    public ArrayList<Order> getNotCloseOrders() {
+        ArrayList<Order> dontCloseOrders = new ArrayList<>();
+        for(Order order: this.orders) {
+            if(!order.isClose()) {
+                dontCloseOrders.add(order);
+            }
+        }
+        return dontCloseOrders;
+    }
+    public ArrayList<Order> getCloseOrders() {
+        ArrayList<Order> closeOrders = new ArrayList<>();
+        for(Order order: this.orders) {
+            if(order.isClose()) {
+                closeOrders.add(order);
+            }
+        }
+        return closeOrders;
+    }
+
     public User getUser() {
         return this.user;
     }
@@ -28,13 +47,12 @@ public class Client
         this.orders = orders;
     }
 
+    public double getTotalSum() {
+        return setSum(this.totalSum, this.getOrders());
+    }
+
     public double getNotTotalSum() {
-        if (orders.size() == 0) {
-            totalSum = 0.0;
-        } else if(totalSum == 0.0) {
-            setTotalSum();
-        }
-        return totalSum;
+        return setSum(0, this.getNotCloseOrders());
     }
 
     public Client(Facade facade, User user) throws  IOException {
@@ -44,11 +62,13 @@ public class Client
         this.orders = initOrders();
     }
 
-    private void setTotalSum() {
-        this.totalSum = 0;
-        for(int i = 0; i < orders.size(); i++) {
-            this.totalSum+=orders.get(i).getPrice();
+    private double setSum(double sum, ArrayList<Order> orders) {
+        if(orders.size() > 0) {
+            for(int i = 0; i < orders.size(); i++) {
+                sum += orders.get(i).getPrice();
+            }
         }
+        return sum;
     }
 
     private ArrayList<Order> initOrders() {

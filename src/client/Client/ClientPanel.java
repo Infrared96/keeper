@@ -1,6 +1,7 @@
 package client.Client;
 
 import client.Client.ModalAdd.ModalAddTab;
+import client.Model.Order.Order;
 import client.Model.User.User;
 import client.facade.Facade;
 
@@ -9,6 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ClientPanel extends JPanel {
     private Facade facade;
@@ -26,9 +28,9 @@ public class ClientPanel extends JPanel {
         setBackground(Color.white);
 
         initClient();
-
-        tm = new TableModel(this.client.getOrders());
-        table = new OrderTable(tm, facade);
+        ArrayList<Order> userOrders = this.user.getType().equals("admin") ? this.client.getOrders() : this.client.getNotCloseOrders();
+        tm = new TableModel(userOrders);
+        table = new OrderTable(tm, facade, userOrders);
         this.facade.setTableModel(tm);
         this.facade.setOrderTable(table);
 
@@ -39,7 +41,7 @@ public class ClientPanel extends JPanel {
         addOrder.setFont(new Font(this.getName(), Font.BOLD, 20));
         addOrder.setBackground(Color.white);
         addOrder.setSize(1200,32);
-        addOrder.addActionListener(new addTable(this.facade,this.user));
+        addOrder.addActionListener(new addTable());
         add(addOrder);
     }
 
@@ -49,7 +51,7 @@ public class ClientPanel extends JPanel {
             this.client = new Client(this.facade, this.user);
             this.facade.setClient(this.client);
 
-            statusbar = new JLabel("Пользователь: " + this.user.getName()+  "Общая касса :"  + "  Сумма не закрытых счетов: " + this.client.getNotTotalSum());
+            statusbar = new JLabel("Пользователь: " + this.user.getName()+  "  Общая касса: " + this.client.getTotalSum()  + "  Сумма не закрытых счетов: " + this.client.getNotTotalSum());
             statusbar.setFont(new Font(statusbar.getName(), Font.BOLD, 14));
             this.add(statusbar, BorderLayout.SOUTH);
 
@@ -59,22 +61,13 @@ public class ClientPanel extends JPanel {
     }
 
     private class addTable implements ActionListener {
-        Facade facade;
-        User user;
-        addTable(Facade facade, User user) {
-            this.facade = facade;
-            this.user = user;
-        }
 
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            try
-            {
-                new ModalAddTab(this.facade, this.user);
-            }
-            catch (Exception e1)
-            {
+            try {
+                new ModalAddTab(facade, user);
+            } catch (Exception e1) {
                 e1.printStackTrace();
             }
         }

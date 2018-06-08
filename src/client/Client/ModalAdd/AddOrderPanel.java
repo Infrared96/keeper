@@ -13,10 +13,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class AddOrderPanel extends JPanel {
-    Facade facade;
-    JTextField inputTable;
-    JTextField inputCount;
-    JLabel labelError;;
+    private Facade facade;
+    private JTextField inputTable;
+    private JTextField inputCount;
+    private JLabel labelError;
     public AddOrderPanel(Facade facade, User user, ModalAddTab modalAddTab) {
         this.facade = facade;
 
@@ -81,14 +81,10 @@ public class AddOrderPanel extends JPanel {
         }
 
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            try
-            {
+        public void actionPerformed(ActionEvent e) {
+            try {
                 this.modalAddTab.dispose();
-            }
-            catch (Exception e1)
-            {
+            } catch (Exception e1) {
                 e1.printStackTrace();
             }
         }
@@ -105,10 +101,8 @@ public class AddOrderPanel extends JPanel {
         }
 
         @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            try
-            {
+        public void actionPerformed(ActionEvent e) {
+            try {
                 if(!String.valueOf(inputTable.getText()).equals("") && !String.valueOf(inputCount.getText()).equals("")) {
                     int table = Integer.parseInt(String.valueOf(inputTable.getText()));
                     int count = Integer.parseInt(String.valueOf(inputCount.getText()));
@@ -128,9 +122,7 @@ public class AddOrderPanel extends JPanel {
                     labelError.setText("Error: Не заполнено(-ы) поле(-я)");
                     labelError.setForeground (Color.red);
                 }
-            }
-            catch (Exception e1)
-            {
+            } catch (Exception e1) {
                 e1.printStackTrace();
             }
         }

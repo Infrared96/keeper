@@ -10,7 +10,7 @@ public class TableModel extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
     private ArrayList<Order> ol = null;
 
-     public TableModel(ArrayList<Order> ol) {
+    public TableModel(ArrayList<Order> ol) {
         this.ol = ol;
     }
 
@@ -28,9 +28,8 @@ public class TableModel extends AbstractTableModel {
     public String getValueAt(int rowIndex, int columnIndex) {
         Order or = ol.get(rowIndex);
         String ret = null;
-        switch(columnIndex)
-        {
-            case 0: ret = or.getId()+""; break;
+        switch(columnIndex) {
+            case 0: ret = rowIndex + 1 + ""; break;
             case 1: ret = or.getTable_num()+""; break;
             case 2: ret = or.getCount()+"";break;
             case 3: ret = or.getPrice()+""; break;
@@ -39,8 +38,7 @@ public class TableModel extends AbstractTableModel {
         return ret;
     }
 
-    public String getColumnName(int column)
-    {
+    public String getColumnName(int column) {
         String[] name = {"№","Стол","Количество людей", "Сумма заказa(грн)"};
         return name[column];
     }

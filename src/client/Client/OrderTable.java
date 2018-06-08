@@ -7,16 +7,20 @@ import client.facade.Facade;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 
 public class OrderTable extends JTable{
     Facade facade;
-    public OrderTable(TableModel dm, Facade facade) {
+    ArrayList<Order> orders;
+
+    public OrderTable(TableModel dm, Facade facade, ArrayList<Order> orders) {
         super(dm);
         this.facade = facade;
+        this.orders = orders;
 
         this.getTableHeader().setPreferredSize(new Dimension(0, 32));
         this.rowHeight = 32;
@@ -34,8 +38,39 @@ public class OrderTable extends JTable{
 
         });
 
+        this.setDefaultRenderer(Object.class, new DefaultTableCellRenderer()
+        {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
+            {
+                final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                if(facade.getClient().getUser().getType().equals("admin")) {
+                    if(orders.get(row).isPrint() && orders.get(row).isClose()) {
+                        c.setBackground(new Color(12, 12, 12, 57));
+                    } else if(orders.get(row).isPrint()) {
+                        c.setBackground(new Color(22, 177, 11, 57));
+                    } else {
+                        c.setBackground(Color.white);
+                    }
+                }
+                return c;
+            }
+        });
+
         this.addMouseListener(new OpenNewOrder(this));
     }
+//    class MyTableCellRenderer extends DefaultTableCellRenderer {
+//        TableModel dm;
+//        public MyTableCellRenderer(TableModel dm) {
+//            this.dm = dm;
+//        }
+//        @Override
+//        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+//            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+//            c.setBackground(dm.getRowColour(row));
+//            return c;
+//        }
+//    }
 
     private class OpenNewOrder extends MouseAdapter {
         JTable table;
@@ -51,7 +86,8 @@ public class OrderTable extends JTable{
             if(e.getClickCount() == 2 && e.getModifiersEx() == 0) {
                 int row = table.rowAtPoint(e.getPoint());
                 int id = Integer.parseInt(String.valueOf(table.getValueAt(row,0)));
-                Order or = OrderList.parseOneOrder(facade.getMessageManager().getOrderId("{\"id\":" + id + "}"));
+                int orderId = orders.get(id-1).getId();
+                Order or = OrderList.parseOneOrder(facade.getMessageManager().getOrderId("{\"id\":" + orderId + "}"));
                 new OpenOrderFrame(facade, or);
             }
         }
