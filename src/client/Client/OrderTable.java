@@ -30,7 +30,6 @@ public class OrderTable extends JTable{
 
         //Выравнивание по центру текста
         this.setDefaultRenderer(this.getColumnClass(1), new DefaultTableCellRenderer(){
-
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 super.setHorizontalAlignment(SwingConstants.CENTER);
                 super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);

@@ -1,13 +1,10 @@
 package client.Client.OpenOrder;
 
-import client.Model.Dish.Dish;
-import client.Model.Dish.DishesList;
 import client.Model.Order.Order;
 import client.facade.Facade;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class BigOrderPanel extends JPanel {
     private Facade facade;

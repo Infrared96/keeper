@@ -5,17 +5,25 @@ import client.Model.Order.OrderList;
 import client.Model.User.User;
 import client.facade.Facade;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
 
-public class Client
-{
+public class Client {
     private Facade facade;
     private User user = null;
     private ArrayList<Order> orders = null;
     private double totalSum;
+    private ClientPanel clientPanel;
 
+    public Client(Facade facade, User user, ClientPanel clientPanel) throws  IOException {
+        this.facade = facade;
+        this.user = user;
+        this.totalSum = 0.0;
+        this.clientPanel = clientPanel;
+        this.orders = initOrders();
+    }
     public ArrayList<Order> getOrders() {
         return orders;
     }
@@ -55,11 +63,8 @@ public class Client
         return setSum(0, this.getNotCloseOrders());
     }
 
-    public Client(Facade facade, User user) throws  IOException {
-        this.facade = facade;
-        this.user = user;
-        this.totalSum = 0.0;
-        this.orders = initOrders();
+    public ClientPanel getClientPanel() {
+        return clientPanel;
     }
 
     private double setSum(double sum, ArrayList<Order> orders) {
@@ -73,13 +78,8 @@ public class Client
 
     private ArrayList<Order> initOrders() {
         ArrayList<Order> orders = null;
-        String ordersJSON = null;
-        if(user.getType().equals("admin")) {
-            ordersJSON = facade.getMessageManager().getOrders();
-        } else {
-            ordersJSON = facade.getMessageManager().getOrdersUser("{\"user_id\":" + this.user.getId()+"}");
-        }
-        if (ordersJSON != null) {
+        String ordersJSON = facade.getMessageManager().getOrders(user.getType(), this.user.getId());
+        if (ordersJSON != null || !ordersJSON.equals("")) {
             orders = OrderList.parseUserOrders(ordersJSON);
         }
         return orders;

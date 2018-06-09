@@ -21,9 +21,20 @@ public class MessageManager {
         return requestManager.sendRequest("GET_ORDERS_USER", str);
     }
 
+    public String getOrdersUser(int id) {
+        return requestManager.sendRequest("GET_ORDERS_USER", "{\"user_id\":" + id +"}");
+    }
+
     public String getOrders() {
         return requestManager.sendRequest("GET_ORDERS", "");
     }
+
+    public String getOrders(String type, int id) {
+        String sendRequest = type.equals("admin") ? "GET_ORDERS" : "GET_ORDERS_USER";
+        String data = type.equals("admin") ? "" : "{\"user_id\":" + id +"}";
+        return requestManager.sendRequest(sendRequest, data);
+    }
+
 
     public String getProduct(String str) {
         return requestManager.sendRequest("GET_PRODUCT", str);

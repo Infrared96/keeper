@@ -48,7 +48,7 @@ public class ClientPanel extends JPanel {
     private void initClient() {
         try {
             System.out.println("User: " + this.user.getLogin() + " created!" );
-            this.client = new Client(this.facade, this.user);
+            this.client = new Client(this.facade, this.user, this);
             this.facade.setClient(this.client);
 
             statusbar = new JLabel("Пользователь: " + this.user.getName()+  "  Общая касса: " + this.client.getTotalSum()  + "  Сумма не закрытых счетов: " + this.client.getNotTotalSum());
@@ -58,6 +58,13 @@ public class ClientPanel extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void updateStatusbar() {
+        this.remove(statusbar);
+        statusbar = new JLabel("Пользователь: " + this.user.getName()+  "  Общая касса: " + this.client.getTotalSum()  + "  Сумма не закрытых счетов: " + this.client.getNotTotalSum());
+        statusbar.setFont(new Font(statusbar.getName(), Font.BOLD, 14));
+        this.add(statusbar, BorderLayout.SOUTH);
+        this.updateUI();
     }
 
     private class addTable implements ActionListener {
