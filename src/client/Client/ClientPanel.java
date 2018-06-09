@@ -30,7 +30,7 @@ public class ClientPanel extends JPanel {
         initClient();
         ArrayList<Order> userOrders = this.user.getType().equals("admin") ? this.client.getOrders() : this.client.getNotCloseOrders();
         tm = new TableModel(userOrders);
-        table = new OrderTable(tm, facade, userOrders);
+        table = new OrderTable(tm, facade);
         this.facade.setTableModel(tm);
         this.facade.setOrderTable(table);
 

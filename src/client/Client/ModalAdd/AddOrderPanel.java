@@ -81,10 +81,13 @@ public class AddOrderPanel extends JPanel {
         }
 
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e)
+        {
             try {
                 this.modalAddTab.dispose();
-            } catch (Exception e1) {
+            }
+            catch (Exception e1)
+            {
                 e1.printStackTrace();
             }
         }
@@ -108,14 +111,15 @@ public class AddOrderPanel extends JPanel {
                     int count = Integer.parseInt(String.valueOf(inputCount.getText()));
 
                     ArrayList<Order> orders = null;
-                    String ordersJSON = facade.getMessageManager().createOrder(OrderList.forCreateOrder(table, count, this.user.getId()));
-                    if (ordersJSON != null || !ordersJSON.equals("")) {
+                     facade.getMessageManager().createOrder(OrderList.forCreateOrder(table, count, this.user.getId()));
+                    //if (ordersJSON != null || !ordersJSON.equals("")) {
+                    String ordersJSON = user.getType().equals("admin") ? facade.getMessageManager().getOrders() : facade.getMessageManager().getOrdersUser("{\"user_id\":" + this.user.getId()+"}");
                         orders = OrderList.parseUserOrders(ordersJSON);
                         //обновление таблицы
                         this.facade.getClient().setOrders(orders);
                         this.facade.setTableModel(new TableModel(orders));
                         this.facade.getOrderTable().setModel(this.facade.getTableModel());
-                    }
+                   // }
                     this.modalAddTab.dispose();
                 } else {
                     System.out.println("Error: Не заполнено(-ы) поле(-я)");

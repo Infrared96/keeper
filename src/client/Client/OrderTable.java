@@ -14,13 +14,13 @@ import java.util.ArrayList;
 
 
 public class OrderTable extends JTable{
-    Facade facade;
-    ArrayList<Order> orders;
+    private Facade facade;
+    private ArrayList<Order> orders;
 
-    public OrderTable(TableModel dm, Facade facade, ArrayList<Order> orders) {
+    public OrderTable(TableModel dm, Facade facade) {
         super(dm);
         this.facade = facade;
-        this.orders = orders;
+        this.orders = facade.getClient().getOrders();
 
         this.getTableHeader().setPreferredSize(new Dimension(0, 32));
         this.rowHeight = 32;
@@ -30,32 +30,21 @@ public class OrderTable extends JTable{
 
         //Выравнивание по центру текста
         this.setDefaultRenderer(this.getColumnClass(1), new DefaultTableCellRenderer(){
+
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 super.setHorizontalAlignment(SwingConstants.CENTER);
                 super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-                return this;
-            }
-
-        });
-
-        this.setDefaultRenderer(Object.class, new DefaultTableCellRenderer()
-        {
-            @Override
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
-            {
-                final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
                 if(facade.getClient().getUser().getType().equals("admin")) {
                     if(orders.get(row).isPrint() && orders.get(row).isClose()) {
-                        c.setBackground(new Color(12, 12, 12, 57));
+                        this.setBackground(new Color(12, 12, 12, 57));
                     } else if(orders.get(row).isPrint()) {
-                        c.setBackground(new Color(22, 177, 11, 57));
+                        this.setBackground(new Color(22, 177, 11, 57));
                     } else {
-                        c.setBackground(Color.white);
+                        this.setBackground(Color.white);
                     }
                 }
-                return c;
-            }
-        });
+                return this;
+            }});
 
         this.addMouseListener(new OpenNewOrder(this));
     }
@@ -81,6 +70,7 @@ public class OrderTable extends JTable{
 
         @Override
         public void mouseClicked(MouseEvent e) {
+            orders = facade.getClient().getOrders();
            System.out.println( "click = " + e.getClickCount() + "mouse: " +  e.getModifiersEx() );
 
             if(e.getClickCount() == 2 && e.getModifiersEx() == 0) {

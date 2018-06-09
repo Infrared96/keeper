@@ -20,6 +20,10 @@ public class Client
         return orders;
     }
 
+    public void setOrders( ArrayList<Order> orders) {
+        this.orders = orders;
+    }
+
     public ArrayList<Order> getNotCloseOrders() {
         ArrayList<Order> dontCloseOrders = new ArrayList<>();
         for(Order order: this.orders) {
@@ -41,10 +45,6 @@ public class Client
 
     public User getUser() {
         return this.user;
-    }
-
-    public void setOrders( ArrayList<Order> orders) {
-        this.orders = orders;
     }
 
     public double getTotalSum() {
@@ -73,7 +73,12 @@ public class Client
 
     private ArrayList<Order> initOrders() {
         ArrayList<Order> orders = null;
-        String ordersJSON = facade.getMessageManager().getOrdersUser("{\"user_id\":" + this.user.getId()+"}");
+        String ordersJSON = null;
+        if(user.getType().equals("admin")) {
+            ordersJSON = facade.getMessageManager().getOrders();
+        } else {
+            ordersJSON = facade.getMessageManager().getOrdersUser("{\"user_id\":" + this.user.getId()+"}");
+        }
         if (ordersJSON != null) {
             orders = OrderList.parseUserOrders(ordersJSON);
         }

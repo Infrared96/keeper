@@ -21,8 +21,8 @@ public class MessageManager {
         return requestManager.sendRequest("GET_ORDERS_USER", str);
     }
 
-    public String getOrders(String str) {
-        return requestManager.sendRequest("GET_ORDERS", str);
+    public String getOrders() {
+        return requestManager.sendRequest("GET_ORDERS", "");
     }
 
     public String getProduct(String str) {
