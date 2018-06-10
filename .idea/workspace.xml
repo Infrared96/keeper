@@ -2,21 +2,17 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/client/facade/RequestManager/RequestManager.java" line="48" />
-    <bookmark url="file://$PROJECT_DIR$/src/client/Client/ClientPanel.java" line="50" />
+    <bookmark url="file://$PROJECT_DIR$/src/client/Client/ClientPanel.java" line="49" />
     <bookmark url="file://$PROJECT_DIR$/src/client/facade/RequestManager/RequestManager.java" line="134" />
     <bookmark url="file://$PROJECT_DIR$/src/client/Client/ModalAdd/AddOrderPanel.java" />
     <bookmark url="file://$PROJECT_DIR$/src/client/Client/OpenOrder/NewOldOrder.java" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fba069b3-82cd-459a-83e0-a5cc12f063af" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/ClientPanel$addTable.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyProject/client/Client/ClientPanel.class" afterPath="$PROJECT_DIR$/out/production/MyProject/client/Client/ClientPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/Client.java" afterPath="$PROJECT_DIR$/src/client/Client/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/ClientPanel.java" afterPath="$PROJECT_DIR$/src/client/Client/ClientPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/ModalAdd/AddOrderPanel.java" afterPath="$PROJECT_DIR$/src/client/Client/ModalAdd/AddOrderPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/BigOrderPanel.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/BigOrderPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OpenOrder/OpenOrderFrame.java" afterPath="$PROJECT_DIR$/src/client/Client/OpenOrder/OpenOrderFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Client/OrderTable.java" afterPath="$PROJECT_DIR$/src/client/Client/OrderTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/facade/MessageManager/MessageManager.java" afterPath="$PROJECT_DIR$/src/client/facade/MessageManager/MessageManager.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +27,8 @@
       <file leaf-file-name="BigOrderPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/BigOrderPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+            <state relative-caret-position="238">
+              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,11 +39,41 @@
       <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/facade/MessageManager/MessageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="88" lean-forward="true" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
+            <state relative-caret-position="391">
+              <caret line="31" column="50" lean-forward="true" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
               <folding>
                 <element signature="e#559#560#0" expanded="true" />
                 <element signature="e#632#633#0" expanded="true" />
+                <element signature="e#1198#1199#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1312#1313#0" expanded="true" />
+                <element signature="e#1382#1383#0" expanded="true" />
+                <element signature="e#1429#1430#0" expanded="true" />
+                <element signature="e#1502#1503#0" expanded="true" />
+                <element signature="e#1543#1544#0" expanded="true" />
+                <element signature="e#1609#1610#0" expanded="true" />
+                <element signature="e#1652#1653#0" expanded="true" />
+                <element signature="e#1720#1721#0" expanded="true" />
+                <element signature="e#1763#1764#0" expanded="true" />
+                <element signature="e#1832#1833#0" expanded="true" />
+                <element signature="e#1881#1882#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+                <element signature="e#2002#2003#0" expanded="true" />
+                <element signature="e#2074#2075#0" expanded="true" />
+                <element signature="e#2257#2258#0" expanded="true" />
+                <element signature="e#2332#2333#0" expanded="true" />
+                <marker date="1528641650730" expanded="false" signature="2380:2391" ph=" { " />
+                <marker date="1528641650730" expanded="false" signature="2451:2457" ph=" }" />
+                <marker date="1528641650730" expanded="false" signature="2504:2515" ph=" { " />
+                <marker date="1528641650730" expanded="false" signature="2575:2581" ph=" }" />
+                <marker date="1528641650730" expanded="false" signature="2615:2626" ph=" { " />
+                <marker date="1528641650730" expanded="false" signature="2680:2686" ph=" }" />
+                <marker date="1528641650730" expanded="false" signature="2734:2745" ph=" { " />
+                <marker date="1528641650730" expanded="false" signature="2806:2812" ph=" }" />
+                <marker date="1528641650730" expanded="false" signature="2860:2871" ph=" { " />
+                <marker date="1528641650730" expanded="false" signature="2932:2938" ph=" }" />
+                <marker date="1528641650730" expanded="false" signature="2983:2994" ph=" { " />
+                <marker date="1528641650730" expanded="false" signature="3052:3058" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -72,13 +98,39 @@
       <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/Model/Order/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#setPrice#0;class#Order#0" expanded="false" />
-                <element signature="e#2805#2806#0" expanded="true" />
-                <element signature="e#3962#3983#0" expanded="false" />
+                <marker date="1528641650726" expanded="true" signature="3493:3499" ph="{...}" />
+                <marker date="1528641650726" expanded="false" signature="3528:3539" ph=" { " />
+                <marker date="1528641650726" expanded="false" signature="3551:3557" ph=" }" />
+                <marker date="1528641650726" expanded="false" signature="3596:3607" ph=" { " />
+                <marker date="1528641650726" expanded="false" signature="3624:3630" ph=" }" />
+                <marker date="1528641650726" expanded="false" signature="3692:3698" ph=" }" />
+                <marker date="1528641650726" expanded="false" signature="3746:3757" ph=" { " />
+                <marker date="1528641650726" expanded="false" signature="3784:3790" ph=" }" />
+                <marker date="1528641650726" expanded="false" signature="3825:3836" ph=" { " />
+                <marker date="1528641650726" expanded="false" signature="3854:3860" ph=" }" />
+                <marker date="1528641650726" expanded="false" signature="3910:3921" ph=" { " />
+                <marker date="1528641650726" expanded="false" signature="3950:3956" ph=" }" />
+                <marker date="1528641650726" expanded="false" signature="3962:5458" ph="//..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/facade/RequestManager/RequestManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+              <folding>
+                <marker date="1528641650734" expanded="true" signature="1350:1948" ph="{...}" />
+                <marker date="1528641650734" expanded="true" signature="2010:2669" ph="{...}" />
+                <marker date="1528641650734" expanded="true" signature="2671:3523" ph="//..." />
+                <marker date="1528641650734" expanded="true" signature="3586:4606" ph="{...}" />
+                <marker date="1528641650734" expanded="true" signature="4674:5227" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -109,8 +161,8 @@
       <file leaf-file-name="ClientPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/Client/ClientPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+            <state relative-caret-position="165">
+              <caret line="63" column="55" lean-forward="true" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -133,16 +185,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/Auth/LoginPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="96" column="31" lean-forward="true" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -262,7 +304,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="288" />
     <option name="y" value="247" />
     <option name="width" value="1292" />
@@ -583,7 +625,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -670,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="13" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -678,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-297">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,9 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,7 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,11 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#423#424#0" expanded="false" />
-            <element signature="e#459#460#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,7 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="277" column="0" lean-forward="false" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,9 +912,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/facade/RequestManager/RequestManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="612">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding>
+            <marker date="1528641650734" expanded="true" signature="1350:1948" ph="{...}" />
+            <marker date="1528641650734" expanded="true" signature="2010:2669" ph="{...}" />
+            <marker date="1528641650734" expanded="true" signature="2671:3523" ph="//..." />
+            <marker date="1528641650734" expanded="true" signature="3586:4606" ph="{...}" />
+            <marker date="1528641650734" expanded="true" signature="4674:5227" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -901,7 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,14 +947,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/CloseWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/CloseWindow.java" />
     <entry file="file://$PROJECT_DIR$/src/client/Model/Order/OrderList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -976,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,13 +1028,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Model/Order/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="432">
+          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setPrice#0;class#Order#0" expanded="false" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#3962#3983#0" expanded="false" />
+            <marker date="1528641650726" expanded="true" signature="3493:3499" ph="{...}" />
+            <marker date="1528641650726" expanded="false" signature="3528:3539" ph=" { " />
+            <marker date="1528641650726" expanded="false" signature="3551:3557" ph=" }" />
+            <marker date="1528641650726" expanded="false" signature="3596:3607" ph=" { " />
+            <marker date="1528641650726" expanded="false" signature="3624:3630" ph=" }" />
+            <marker date="1528641650726" expanded="false" signature="3692:3698" ph=" }" />
+            <marker date="1528641650726" expanded="false" signature="3746:3757" ph=" { " />
+            <marker date="1528641650726" expanded="false" signature="3784:3790" ph=" }" />
+            <marker date="1528641650726" expanded="false" signature="3825:3836" ph=" { " />
+            <marker date="1528641650726" expanded="false" signature="3854:3860" ph=" }" />
+            <marker date="1528641650726" expanded="false" signature="3910:3921" ph=" { " />
+            <marker date="1528641650726" expanded="false" signature="3950:3956" ph=" }" />
+            <marker date="1528641650726" expanded="false" signature="3962:5458" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -1037,19 +1073,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/facade/MessageManager/MessageManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="88" lean-forward="true" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="88" />
+        <state relative-caret-position="391">
+          <caret line="31" column="50" lean-forward="true" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
           <folding>
             <element signature="e#559#560#0" expanded="true" />
             <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1312#1313#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1429#1430#0" expanded="true" />
+            <element signature="e#1502#1503#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="true" />
+            <element signature="e#1763#1764#0" expanded="true" />
+            <element signature="e#1832#1833#0" expanded="true" />
+            <element signature="e#1881#1882#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#2002#2003#0" expanded="true" />
+            <element signature="e#2074#2075#0" expanded="true" />
+            <element signature="e#2257#2258#0" expanded="true" />
+            <element signature="e#2332#2333#0" expanded="true" />
+            <marker date="1528641650730" expanded="false" signature="2380:2391" ph=" { " />
+            <marker date="1528641650730" expanded="false" signature="2451:2457" ph=" }" />
+            <marker date="1528641650730" expanded="false" signature="2504:2515" ph=" { " />
+            <marker date="1528641650730" expanded="false" signature="2575:2581" ph=" }" />
+            <marker date="1528641650730" expanded="false" signature="2615:2626" ph=" { " />
+            <marker date="1528641650730" expanded="false" signature="2680:2686" ph=" }" />
+            <marker date="1528641650730" expanded="false" signature="2734:2745" ph=" { " />
+            <marker date="1528641650730" expanded="false" signature="2806:2812" ph=" }" />
+            <marker date="1528641650730" expanded="false" signature="2860:2871" ph=" { " />
+            <marker date="1528641650730" expanded="false" signature="2932:2938" ph=" }" />
+            <marker date="1528641650730" expanded="false" signature="2983:2994" ph=" { " />
+            <marker date="1528641650730" expanded="false" signature="3052:3058" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Client/OpenOrder/BigOrderPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+        <state relative-caret-position="238">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1058,8 +1124,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Client/ClientPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        <state relative-caret-position="165">
+          <caret line="63" column="55" lean-forward="true" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
           <folding />
         </state>
       </provider>

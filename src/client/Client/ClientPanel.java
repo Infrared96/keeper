@@ -17,7 +17,8 @@ public class ClientPanel extends JPanel {
     private User user;
     private TableModel tm;
     private Client client;
-    JLabel statusbar;
+    private JLabel statusbar;
+    private JPanel panel;
     private OrderTable table;
 
     public ClientPanel(Facade facade, User user) {
@@ -27,6 +28,11 @@ public class ClientPanel extends JPanel {
         setLayout(new BorderLayout());
         setBackground(Color.white);
 
+        panel = new JPanel();
+        add(panel,BorderLayout.SOUTH);
+        panel.setLayout(new BorderLayout());
+        panel.setBackground(Color.white);
+
         initClient();
         ArrayList<Order> userOrders = this.user.getType().equals("admin") ? this.client.getOrders() : this.client.getNotCloseOrders();
         tm = new TableModel(userOrders);
@@ -35,14 +41,7 @@ public class ClientPanel extends JPanel {
         this.facade.setOrderTable(table);
 
         JScrollPane scr = new JScrollPane(table);
-        add(scr, BorderLayout.NORTH);
-
-        Button addOrder = new Button("Добавить");
-        addOrder.setFont(new Font(this.getName(), Font.BOLD, 20));
-        addOrder.setBackground(Color.white);
-        addOrder.setSize(1200,32);
-        addOrder.addActionListener(new addTable());
-        add(addOrder);
+        add(scr, BorderLayout.CENTER);
     }
 
     private void initClient() {
@@ -53,17 +52,36 @@ public class ClientPanel extends JPanel {
 
             statusbar = new JLabel("Пользователь: " + this.user.getName()+  "  Общая касса: " + this.client.getTotalSum()  + "  Сумма не закрытых счетов: " + this.client.getNotTotalSum());
             statusbar.setFont(new Font(statusbar.getName(), Font.BOLD, 14));
-            this.add(statusbar, BorderLayout.SOUTH);
+            panel.add(statusbar, BorderLayout.SOUTH);
+            JPanel buttonsPanel = new JPanel();
+            buttonsPanel.setLayout(new FlowLayout());
+            panel.add(buttonsPanel, BorderLayout.CENTER);
+
+            Button addOrder = new Button("Добавить заказ");
+            addOrder.setFont(new Font(this.getName(), Font.BOLD, 20));
+            addOrder.setBackground(Color.white);
+            addOrder.setSize(600,32);
+            addOrder.addActionListener(new addTable());
+            buttonsPanel.add(addOrder);
+
+            if(client.getUser().getType().equals("admin")) {
+                Button closeChange = new Button("Закрыть смену");
+                closeChange.setFont(new Font(this.getName(), Font.BOLD, 20));
+                closeChange.setBackground(Color.white);
+                closeChange.setSize(600,32);
+                closeChange.addActionListener(new addTable());
+                buttonsPanel.add(closeChange);
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     public void updateStatusbar() {
-        this.remove(statusbar);
+        panel.remove(statusbar);
         statusbar = new JLabel("Пользователь: " + this.user.getName()+  "  Общая касса: " + this.client.getTotalSum()  + "  Сумма не закрытых счетов: " + this.client.getNotTotalSum());
         statusbar.setFont(new Font(statusbar.getName(), Font.BOLD, 14));
-        this.add(statusbar, BorderLayout.SOUTH);
+        panel.add(statusbar, BorderLayout.SOUTH);
         this.updateUI();
     }
 
