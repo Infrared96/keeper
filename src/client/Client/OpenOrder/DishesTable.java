@@ -63,7 +63,14 @@ public class DishesTable extends JTable {
 
             if(e.getClickCount() == 2 && e.getModifiersEx() == 0) {
                 int row = table.rowAtPoint(e.getPoint());
-                Dish dish = this.dishes.get(row);
+                String name = table.getValueAt(row, 0).toString();
+                Dish dish = null;
+                for( Dish it: facade.getDishes()) {
+                    if(it.getName().equals(name)) {
+                        dish = it;
+                    }
+                }
+                //Dish dish = this.dishes.get(row);
                 boolean flag = true;
                 if(facade.getActualOrder().size() != 0) {
                     for( NewOrder order : facade.getActualOrder()) {

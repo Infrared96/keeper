@@ -24,7 +24,7 @@ public class Order {
         this.count = count;
         this.price = price;
     }
-
+    //constructorfor JSON string
     public Order(String str) {
         try {
             JSONParser jsonParser = new JSONParser();
@@ -45,7 +45,7 @@ public class Order {
             e.printStackTrace();
         }
     }
-
+    //func for close order and send in DB
     public void closeOrder(Facade facade, boolean cash) {
         this.cash = cash;
         this.close = true;
@@ -56,6 +56,7 @@ public class Order {
         return price;
     }
 
+    //func for set price and send in DB
     public void setPrice(Facade facade, double price) {
         this.price = price;
         facade.getMessageManager().updateOrderPrice("{\"order_id\":" + this.id + ",\"price\":" + price + "}");

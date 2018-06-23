@@ -21,7 +21,7 @@ public class OrderList {
         return orders;
     }
 
-
+    //create order to JSON
     public static String forCreateOrder(int table, int count, int id) {
         String jsonText = null;
         try {

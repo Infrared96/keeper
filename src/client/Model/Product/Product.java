@@ -15,6 +15,7 @@ public class Product {
         this.amount = amount;
     }
 
+    //constructor for JSON string
     public Product(String str) {
         try {
             JSONParser jsonParser = new JSONParser();

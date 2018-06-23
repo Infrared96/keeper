@@ -25,6 +25,7 @@ public class Dish {
         this.amount = amount;
     }
 
+    // create Dish fron JSON string
     public Dish(String str) {
         try {
             JSONParser jsonParser = new JSONParser();

@@ -92,7 +92,7 @@ class LoginPanel extends JPanel {
                 //FrameClient fClient = facade.getRequestManager().createClient(login, password);
                 if (!facade.isLogin) {
                     String userStr = facade.getMessageManager().getUserLogin(UserList.forLoginJSON(login,password));
-                    if (userStr != null) {
+                    if (userStr != null && !userStr.equals("Error") ) {
                         User user = new User(userStr);
                         new FrameClient(facade, user);
                         this.frame.dispose();

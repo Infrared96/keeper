@@ -42,6 +42,7 @@ public class User {
         }
     }
 
+    //JSON for Order
     public String forOrderJSON() {
         String jsonText = null;
         try {

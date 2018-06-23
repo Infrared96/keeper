@@ -20,7 +20,7 @@ public class UserList {
         users.add(user);
         return true;
     }
-
+    //JSON for LogIn in system
     public static String forLoginJSON(String login, String password) {
         String jsonText = null;
         try {

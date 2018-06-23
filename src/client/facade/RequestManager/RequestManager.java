@@ -31,7 +31,6 @@ public class RequestManager {
     }
 
     public String sendRequest(String type, String data) {
-        // sendRequest("LOGIN_USER", json);
         try {
             String method = Arrays.asList(this.getRequests).contains(type) ? "GET" : Arrays.asList(this.postRequests).contains(type) ? "POST" : null;
             if (method == null) {
@@ -65,31 +64,6 @@ public class RequestManager {
         }
         return ret;
     }
-
-//    private Object parse(String line, String type)
-//    {
-//        try
-//        {
-//            JSONParser jsonParser = new JSONParser();
-//            JSONArray pp = (JSONArray) jsonParser.parse(line);
-//
-//            for (int i = 0; i < pp.size(); i++)
-//            {
-//                //JSONObject element = (JSONObject) pp.get(i);
-//
-//                String id = String.valueOf(element.get("id"));
-//                String fname = String.valueOf(element.get("fname"));
-//                String lname = String.valueOf(element.get("lname"));
-//                String age = String.valueOf(element.get("age"));
-//
-//                System.out.println(id + "," + fname + "," + lname + "," + age);
-//            }
-//            System.out.println();
-//
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     private String sendPostRequest(String type, String data) {
         String ret = null;
